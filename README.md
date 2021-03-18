@@ -12,7 +12,16 @@ Um exemplo do uso do Lerp é colocar uma bola quicando, ou uma chuva.
 
 <img src="https://raw.githubusercontent.com/felipebeskow/RV-LerpVsSlerp/main/src-img/Video.Guru_20210317_223259096.gif" width="500">
 
-Mas porque utilizar Lerp se a física pode fazer isso? O problema da física é que ela é muito custosa, ainda mais quando se tem muitos objetos.
+### Mas porque utilizar Lerp se a física pode fazer isso? 
+O problema da física é que ela é muito custosa, ainda mais quando se tem muitos objetos.
+
+### Como usar o Lerp no tranform de objetos
+
+O processo é bem simples bastando usar a seguinte linha:
+
+```csharp
+transform.position = Vector3.Lerp(inicio.position, fim.position, porcentPosition);
+```
 
 
 ## Referencias:
