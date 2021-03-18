@@ -16,11 +16,8 @@ public class LerpBolinha : MonoBehaviour
     [Range(0f,1f)]
     public float porcent = 0.5f;
 
-    public Scrollbar buttonTypeInterpol;
-
     private bool on = false;
     private int direcao = 1;
-    public string typeInterpol = "LERP";
 
     void Update() {
         if (on) {
@@ -40,21 +37,14 @@ public class LerpBolinha : MonoBehaviour
         }
 
         if (Input.GetKeyDown(KeyCode.Space)) {
-            on = !on;
+            mudarMoveBola();
         }
-
-        if (typeInterpol.Equals("LERP")) {
-            transform.position = Vector3.Lerp(inicio.position, fim.position, porcent);
-        } else {
-            transform.position = Vector3.Slerp(inicio.position, fim.position, porcent);
-        }
+        
+        transform.position = Vector3.Lerp(inicio.position, fim.position, porcent);
+        
     }
 
-    public void changeLerpSlerp(){
-        if (buttonTypeInterpol.value < 0.6f) {
-            typeInterpol = "LERP";
-        } else {
-            typeInterpol = "SLERP";
-        }
+    public void mudarMoveBola(){
+        on = !on;
     }
 }
